@@ -192,7 +192,7 @@ class Bookmarks extends PureComponent<IProps, IStates> {
                </div>
                <div className={classes.appBody}>
                   {
-                     (bookmarks.length)
+                     (bookmarks && bookmarks.length)
                         ? bookmarks.map((bookmark: IBookmark, index: number) => (
                            <Bookmark
                               id={bookmark.id}
