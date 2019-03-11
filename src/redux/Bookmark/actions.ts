@@ -58,3 +58,17 @@ export const deleteBookmark = (id: number) => {
       });
    };
 };
+
+export const deleteBookmarkTag = (id: number, tag: string) => {
+   return async (dispatch: any) => {
+      dispatch(actionTypes.deleteTag.request());
+
+      return Services.deleteBookmarkTag(id, tag).then((response: any) => {
+         (response)
+            ? dispatch(actionTypes.deleteTag.success(JSON.parse(response)))
+            : dispatch(actionTypes.deleteTag.error());
+      }).catch((error: any) => {
+         throw error;
+      });
+   };
+};

@@ -54,9 +54,23 @@ const deleteBookmark = (state = initialState, action: any) => {
    }
 };
 
+const deleteBookmarkTag = (state = initialState, action: any) => {
+   switch (action.type) {
+      case 'DELETE_TAG_BOOKMARK_REQUEST':
+         return { ...state, isFetching: true };
+      case 'DELETE_TAG_BOOKMARK_SUCCESS':
+         return { response: action.response, isFetching: false };
+      case 'DELETE_TAG_BOOKMARK_ERROR':
+         return { ...state, isFetching: false };
+      default:
+         return state;
+   }
+};
+
 export default combineReducers({
    list: listBookmark,
    add: addBookmark,
    edit: editBookmark,
    delete: deleteBookmark,
+   deleteTag: deleteBookmarkTag,
 });

@@ -46,6 +46,18 @@ const deleteBookmarkSuccess = (response: any) => {
    return { type: 'DELETE_BOOKMARK_SUCCESS', response };
 };
 
+const deleteBookmarkTagRequest = () => {
+   return { type: 'DELETE_BOOKMARK_REQUEST' };
+};
+
+const deleteBookmarkTagError = () => {
+   return { type: 'DELETE_BOOKMARK_ERROR' };
+};
+
+const deleteBookmarkTagSuccess = (response: any) => {
+   return { type: 'DELETE_BOOKMARK_SUCCESS', response };
+};
+
 export default {
    list: {
       request: listBookmarkRequest,
@@ -66,5 +78,10 @@ export default {
       request: deleteBookmarkRequest,
       success: deleteBookmarkSuccess,
       error: deleteBookmarkError,
+   },
+   deleteTag: {
+      request: deleteBookmarkTagRequest,
+      success: deleteBookmarkTagSuccess,
+      error: deleteBookmarkTagError,
    },
 };

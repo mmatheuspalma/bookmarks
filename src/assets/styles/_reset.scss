@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+}
+
+:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-weight: 500;
+    font-size: 14px;
+    -webkit-font-smoothing: antialiased;
+}
+
+input,
+select {
+    -webkit-appearance: none;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:visited {
+        text-decoration: none;
+    }
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+b,
+i {
+    margin: 0;
+}
+
+textarea {
+    resize: none;
+}

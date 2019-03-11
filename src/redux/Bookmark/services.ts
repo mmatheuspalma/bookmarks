@@ -37,9 +37,23 @@ const deleteBookmark = (id: number|string) => {
    });
 };
 
+const deleteBookmarkTag = (id: number|string, bookmarkTag: string) => {
+   return listBookmark().then((response: any) => {
+      let bookmarks = JSON.stringify(JSON.parse(response).map((item: IBookmark) => {
+         return (item.id === id) ? {
+               ...item,
+               tags: item.tags.filter((tag: any) => tag !== bookmarkTag)
+            } : item;
+      }));
+
+      return ImmortalDB.set('bookmarks', bookmarks);
+   });
+};
+
 export default {
    listBookmark,
    addBookmark,
    editBookmark,
    deleteBookmark,
+   deleteBookmarkTag
 };
